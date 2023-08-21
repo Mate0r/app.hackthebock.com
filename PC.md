@@ -51,3 +51,12 @@ service ServerReflection {
 80 union SELECT group_concat(password) from accounts
 
 sau:HereIsYourPassWord1431
+
+# Exploit pyLoad
+
+We found there is a process owned by root that has launched pyload
+if we do pyload --version, we found this is a version 0.5.0
+hen googling, we find out by default pyLoad run on port 8000
+we can see there is a port listening on 8000
+if we do a ssh tunneling, we can see the website in our local browser
+
