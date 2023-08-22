@@ -21,5 +21,11 @@ sudo nmap -T4 -p- -sV twomillion.htb
 
 We got this result
 ```bash
-
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.9p1 Ubuntu 3ubuntu0.1 (Ubuntu Linux; protocol 2.0)
+80/tcp open  http    nginx
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ```
+# HTTP (port 80)
+
+Let's enumerate with feroxbuster while we'll try some file manually
