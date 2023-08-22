@@ -29,3 +29,17 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 # HTTP (port 80)
 
 Let's enumerate with feroxbuster while we'll try some file manually
+
+http://2million.htb/
+
+http://2million.htb/api/v1/user/login
+http://2million.htb/api/v1/user/register
+http://2million.htb/api/v1/user/auth
+
+http://2million.htb/api/v1/user/vpn/generate
+http://2million.htb/api/v1/user/vpn/regenerate
+http://2million.htb/api/v1/user/vpn/download
+
+http://2million.htb/home/rules
+http://2million.htb/home/access
+http://2million.htb/home/changelog
