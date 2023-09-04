@@ -28,3 +28,11 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ```
 # HTTP (port 80)
 after investicating, it seems it is Spring Boot running (JSP Java Server Pages)
+we found some url in actuator
+```
+200      GET        1l        1w       15c http://cozyhosting.htb/actuator/health
+200      GET        1l        1w      495c http://cozyhosting.htb/actuator/sessions
+200      GET        1l      120w     4957c http://cozyhosting.htb/actuator/env
+200      GET        1l      542w   127224c http://cozyhosting.htb/actuator/beans
+```
+
