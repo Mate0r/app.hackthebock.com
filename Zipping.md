@@ -26,33 +26,16 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 ## HTTP (port 80)
 
-http://zipping.htb/upload.php
+http://zipping.htb/upload.php\
 http://zipping.htb/shop/
 http://zipping.htb/uploads/
-
-
-http://zipping.htb/shop/functions.php
-http://zipping.htb/shop/home.php
-http://zipping.htb/index.php
-http://zipping.htb/shop/placeorder.php
-http://zipping.htb/shop/product.php
-http://zipping.htb/shop/products.php
-http://zipping.htb/shop/cart.php
-
-
-//// IMPORTANT
-//// IMPORTANT
-//// IMPORTANT
-//// IMPORTANT
-
-ESSAYER DE CHOPER LE /shop/functions.php avec le ZIP et le ln -s / 
-
-//// IMPORTANT
-//// IMPORTANT
-//// IMPORTANT
-//// IMPORTANT
-//// IMPORTANT
-
+http://zipping.htb/shop/functions.php\
+http://zipping.htb/shop/home.php\
+http://zipping.htb/index.php\
+http://zipping.htb/shop/placeorder.php\
+http://zipping.htb/shop/product.php\
+http://zipping.htb/shop/products.php\
+http://zipping.htb/shop/cart.php\
 
 
 
