@@ -26,7 +26,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 ## HTTP (port 80)
 
-http://zipping.htb/upload.php\
+http://zipping.htb/upload.php \
 http://zipping.htb/shop\
 http://zipping.htb/uploads\
 http://zipping.htb/shop/functions.php\
