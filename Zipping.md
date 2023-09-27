@@ -100,3 +100,9 @@ User rektsu may run the following commands on zipping:
 ```
 
 St0ckM4nager
+
+
+$DATABASE_HOST = 'localhost';
+    $DATABASE_USER = 'root';
+    $DATABASE_PASS = 'MySQL_P@ssw0rd!';
+    $DATABASE_NAME = 'zipping';
