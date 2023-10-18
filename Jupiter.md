@@ -26,3 +26,16 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 ## HTTP (port 80)
 
+we found a "Source" folder
+we found a "sass" folder
+
+sous domaine : kiosk.jupiter.htb
+Grafana v9.5.2
+
+http://kiosk.jupiter.htb/metrics
+
+{db_name="grafana"}
+
+http://kiosk.jupiter.htb/api/dashboards/uid/jMgFGfA4z
+we found there is a user named admin
+
