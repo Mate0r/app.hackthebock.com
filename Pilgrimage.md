@@ -32,3 +32,5 @@ index.php
 login.php
 logout.php$
 register.php
+
+https://github.com/Sybil-Scan/imagemagick-lfi-poc
