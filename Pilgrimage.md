@@ -37,3 +37,7 @@ https://github.com/Sybil-Scan/imagemagick-lfi-poc
 
 
 emily|abigchonkyboi123
+/bin/bash /usr/sbin/malwarescan.sh
+
+
+5fe99660d0697da4a03e04aed6d9366d
