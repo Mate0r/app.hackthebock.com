@@ -40,4 +40,4 @@ emily|abigchonkyboi123
 /bin/bash /usr/sbin/malwarescan.sh
 
 
-5fe99660d0697da4a03e04aed6d9366d
+https://www.exploit-db.com/exploits/51249
