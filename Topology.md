@@ -16,12 +16,23 @@ sudo nmap -T4 -sV -p- topology.htb
 
 we got these open ports
 ```bash
-
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.7 (Ubuntu Linux; protocol 2.0)
+80/tcp open  http    Apache httpd 2.4.41 ((Ubuntu))
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ```
 
 # #3 user.txt
 
 ## HTTP (port 80)
+
+http://latex.topology.htb/equation.php
+http://stats.topology.htb/
+
+http://topology.htb/css/
+http://topology.htb/images/
+http://topology.htb/javascript/
+http://topology.htb/portraits/
 
 
 \newread\f
