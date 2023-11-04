@@ -38,3 +38,9 @@ pgp                     [Status: 200, Size: 3187, Words: 9, Lines: 54, Duration:
 process                 [Status: 405, Size: 153, Words: 16, Lines: 6, Duration: 89ms]
 view                    [Status: 302, Size: 225, Words: 18, Lines: 6, Duration: 110ms]
 
+
+.gpg
+.asc
+.sig
+
+
