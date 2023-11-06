@@ -61,14 +61,7 @@ joshua:$2a$12$SOn8Pf6z8fO/nVsNbAAequ/P6vLRJJl7gCUEiYBU2iLHn4G/p/Zw2
 
 joshua:spongebob1
 
-
-root        1537  0.0  0.0   2888   960 ?        Ss   23:09   0:00 /bin/sh /root/scripts/other/docker-startup.sh
-root        1538  0.7  0.8 190444 33976 ?        Sl   23:09   0:01  _ /usr/bin/python3 /usr/bin/docker-compose -f /root/scripts/docker/docker-compose.yml up
-root        1644  0.0  0.3 722280 12528 ?        Sl   23:09   0:00 /usr/bin/containerd-shim-runc-v2 -namespace moby -id f88b314ed6a4f84693267bda194d6266bdde5798ef5ccd082109b2566fda07f8 -address /run/containerd/containerd.sock
-
-
-/usr/lib/python3/dist-packages/docker/credentials 
-/srv/.pm2/pm2.log
-
+we can bypass condition in script /opt/scripts/mysql-backup.sh by using the wildcard *
+if we do 2 connections and watch the process in a second account with pspy64, we can see the process executed
 
 kljh12k3jhaskjh12kjh3
