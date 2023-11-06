@@ -42,5 +42,12 @@ view                    [Status: 302, Size: 225, Words: 18, Lines: 6, Duration: 
 .gpg
 .asc
 .sig
+.key
+
+
+
+https://www.wired.co.uk/article/efail-pgp-vulnerability-outlook-thunderbird-smime
+
+https://efail.de/
 
 
