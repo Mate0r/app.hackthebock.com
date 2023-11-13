@@ -19,6 +19,14 @@ we got these open ports
 PORT      STATE SERVICE    VERSION
 22/tcp    open  ssh        OpenSSH 8.9p1 Ubuntu 3ubuntu0.4 (Ubuntu Linux; protocol 2.0)
 80/tcp    open  http       nginx 1.18.0 (Ubuntu)
+1883/tcp  open  mqtt
+5672/tcp  open  amqp?
+8161/tcp  open  http       Jetty 9.4.39.v20210325
+45225/tcp open  tcpwrapped
+61613/tcp open  stomp      Apache ActiveMQ
+61614/tcp open  http       Jetty 9.4.39.v20210325
+61616/tcp open  apachemq   ActiveMQ OpenWire transport
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ```
 
 # #3 user.txt
