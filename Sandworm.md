@@ -164,3 +164,8 @@ pub fn log(user: &str, query: &str, justification: &str) {
     }
 }
 
+
+https://gist.github.com/GugSaas/9fb3e59b3226e8073b3f8692859f8d25
+
+
+
