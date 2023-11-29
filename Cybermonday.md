@@ -83,14 +83,12 @@ the first is the one where we can add a product with an image (and maybe a websh
 the second is the changelog page that telling us there is webhook set so we can visit this url : http://webhooks-api-beta.cybermonday.htb/
 
 
-
-
-
-there is a /login/ url that we can maybe exploit
-
-there is cookies that are base64 encoded that we can maybe exploit
-
-there is some idea to sql injection for laravel here : https://stitcher.io/blog/unsafe-sql-functions-in-laravel
+we can send some request via webhook :
+```bash
+┌──(parallels㉿kali)-[~]
+└─$ curl -X POST -H "Content-Type: application/json" -d '{"username":"your_username"}' http://webhooks-api-beta.cybermonday.htb/auth/login
+{"status":"error","message":"\"password\" not defined"}
+```
 
 
 
