@@ -90,6 +90,7 @@ we can send some request via webhook :
 {"status":"error","message":"\"password\" not defined"}
 ```
 
+http://webhooks-api-beta.cybermonday.htb/webhooks/fda96d32-e8c8-4301-8fb3-c821a316cf77/0
 http://webhooks-api-beta.cybermonday.htb/webhooks/fda96d32-e8c8-4301-8fb3-c821a316cf77/logs
 
 
