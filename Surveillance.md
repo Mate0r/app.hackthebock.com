@@ -22,3 +22,10 @@ we got these open ports
 # #3 user.txt
 
 ## HTTP (port 80)
+
+
+Powered by Craft CMS
+https://github.com/craftcms/cms/tree/4.4.14
+https://threatprotect.qualys.com/2023/09/25/craft-cms-remote-code-execution-vulnerability-cve-2023-41892/
+
+CVE-2023-41892
