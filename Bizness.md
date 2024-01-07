@@ -34,5 +34,9 @@ or maybe a tomcat since we have .jvm1 at the end so there is a servlet
 JSESSIONID	"BE10755A7A9054FB77506FFA467A65A8.jvm1"
 
 
+the website use the framework OFBiz\
+OFBiz is a Java based web framework including an entity engine, a service engine and a widget based UI allowing you to quickly prototype and develop your web .
+
+
 with ffuf, we found one url :
 https://bizness.htb/control
