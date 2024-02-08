@@ -40,3 +40,14 @@ OFBiz is a Java based web framework including an entity engine, a service engine
 
 with ffuf, we found one url :
 https://bizness.htb/control
+
+
+
+
+/opt/ofbiz/gradlew
+
+
+/opt/ofbiz/.github
+
+
+/opt/ofbiz/framework/resources/templates/AdminUserLoginData.xml
